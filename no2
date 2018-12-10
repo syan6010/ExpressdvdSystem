@@ -1,0 +1,89 @@
+package com.example.nogizaka46top.no2;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    private ListView lis1;
+    String[] name = new String[]{"Lin", "Liu", "JJ"};
+    String[] email = new String[]{"email: abc1@gmail.com", "email: abc2@gmail.com", "email: abc3@gmail.com"};
+    String[] tele = new String[]{"tele: 09123456", "tele: 09123457", "tele: 09123458"};
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        lis1 = findViewById(R.id.lis1);
+
+        lis1.setAdapter(new myadapter());
+
+        lis1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle(name[i])
+                        .setMessage("是否打電話？")
+                        .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                finish();
+                            }
+                        })
+                        .setNegativeButton("no", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        })
+                        .show();
+            }
+        });
+
+
+    }
+
+
+    class myadapter extends BaseAdapter {
+
+        @Override
+        public int getCount() {
+            return name.length;
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            view = LayoutInflater.from(MainActivity.this).inflate(R.layout.mylayout, null);
+            TextView txt1 = view.findViewById(R.id.txt1);
+            TextView txt2 = view.findViewById(R.id.txt2);
+            TextView txt3 = view.findViewById(R.id.txt3);
+
+            txt1.setText(name[i]);
+            txt2.setText(email[i]);
+            txt3.setText(tele[i]);
+
+            return view;
+        }
+    }
+
+}

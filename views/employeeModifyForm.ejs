@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>北商資管</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-toggleable-lg navbar-light bg-light">
+				 
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="navbar-toggler-icon"></span>
+				</button> <a class="navbar-brand" href="/">回首頁</a>		
+			</nav>
+			<div class="jumbotron">
+				<h2>
+					員工修改
+				</h2>
+			</div>
+			
+			
+			<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+			<!-- 內容                                 -->
+			<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+			<div class="row">				
+				<div class="col-md-12">		
+					<form role="form" method="post" action="employeeModify">
+					
+						<div class="form-group">							
+							<label>員工編號</label>
+							<input type="text" required class="form-control" value="<%= items[0].empNo %>" name="empNo"/>
+						</div>
+						
+						<div class="form-group">							
+							<label>員工姓名</label>
+							<input type="text" required class="form-control" value="<%= items[0].empName %>" name="empName"/>
+						</div>
+						
+						<div class="form-group">							
+							<label>員工生日</label>
+							<input type="date" required class="form-control" value="<%= items[0].birthday %>" name="birthday"/>
+						</div>
+                        <div class="form-group">		 
+                            <label>
+                                年齡
+                            </label>
+                            <input type="number" required value="<%= items[0].age %>" class="form-control" name="age" />
+				        </div>
+						
+						<div class="form-group">							
+							<label>身分證字號</label>
+							<input type="text" required class="form-control" value="<%= items[0].id %>" name="id"/>
+						</div>
+						
+					    <div class="form-group">		 
+                            <label>
+                                性別
+                            </label>
+                             <select type="text" class="form-control" value="<%= items[0].gender %>" name="gender" >
+                                    <option value="M"> 男</option>
+                                    <option value="F"> 女</option>
+                            </select>
+				        </div>
+						
+						<div class="form-group">							
+							<label>地址</label>
+							<input type="text" required class="form-control" value="<%= items[0].address %>" name="address"/>
+						</div>
+						
+						<div class="form-group">							
+							<label>員工電話</label>
+							<input type="text" required class="form-control" value="<%= items[0].tel %>" name="tel"/>
+						</div>
+						
+						<div class="form-group">							
+							<label>電子郵件</label>
+							<input type="email" required class="form-control" value="<%= items[0].mail %>" name="mail"/>
+						</div>
+						
+						<div class="form-group">							
+							<label>職等</label>
+							<input type="text" required class="form-control" value="<%= items[0].title %>" name="title"/>
+						</div>
+						
+						<div class="form-group">							
+							<label>到職日期</label>
+							<input type="date" required class="form-control" value="<%= items[0].arriveDate %>" name="arriveDate"/>
+						</div>
+						
+						<button type="submit" class="btn btn-primary">修改</button>
+					</form>
+				</div>				
+			</div>
+			<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		</div>
+	</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

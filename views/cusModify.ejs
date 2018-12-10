@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>租片店管理系統</title>
+
+    <meta name="description" content="Source code generated using layoutit.com">
+    <meta name="author" content="LayoutIt!">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+	
+	<div class="row">
+		<div class="col-md-12">
+			<nav class="navbar navbar-toggleable-lg navbar-light bg-light">
+				 
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="navbar-toggler-icon"></span>
+				</button> <a class="navbar-brand" href="/">回首頁</a>
+			</nav>
+		</div>
+	</div>
+	<div class="row">
+			<div class="col-md-12">
+		
+				<h3 class="text-center text-info">
+					會員資料修改
+				</h3>
+            <form role="form" method="post" action="/cusModifyPlus">
+				<div class="form-group">	 
+					<label>
+						會員編號
+					</label>
+					<input type="text" readonly="true" class="form-control" value="<%= items[0].cusNo %>" name="cusNo"/>
+				</div>
+				
+				<div class="form-group">		 
+					<label>
+						會員姓名
+					</label>
+					<input type="text" required class="form-control" value="<%= items[0].cusName %>" name="cusName"/>
+				</div>
+				
+				<div class="form-group">		 
+					<label>
+						性別
+					</label>
+					 <select type="text" class="form-control" value="<%= items[0].gender %>" name="gender" >
+							<option value="M"> 男</option>
+							<option value="F"> 女</option>
+				    </select>
+				</div>
+				
+				<div class="form-group">		 
+					<label>
+						會員生日
+					</label>
+					<input type="date" required class="form-control" value="<%= items[0].birthday %>" name="birthday"/>
+				</div>
+                
+                <div class="form-group">		 
+					<label>
+						年齡
+					</label>
+					<input type="number" required value="<%= items[0].age %>" class="form-control" name="age" />
+				</div>
+				
+				<div class="form-group">		 
+					<label>
+						連絡電話
+					</label>
+					<input type="text" required class="form-control" value="<%= items[0].tel %>" name="tel"/>
+				</div>
+				
+                <div class="form-group">		 
+					<label>
+						地址
+					</label>
+					<input type="text" required class="form-control" value="<%= items[0].address %>" name="address"/>
+				</div>
+                    
+				<div class="form-group">		 
+					<label>
+						電子郵件
+					</label>
+					<input type="email" required class="form-control" value="<%= items[0].mail %>" name="mail"/>
+				</div>
+				
+				<div class="form-group">		 
+					<label>
+						開始日期
+					</label>
+					<input type="date" required class="form-control" value="<%= items[0].startDate %>" name="startDate"/>
+				</div>
+				
+				<div class="form-group">		 
+					<label>
+						年限
+					</label>
+					<input type="year" required class="form-control" value="<%= items[0].yearlimit %>" name="yearlimit"/>
+				</div> 			
+				
+				<button type="submit" class="btn btn-primary">
+					修改資料
+				</button>
+			</form>
+                </div>
+	</div>
+</div>
+			
+			
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
